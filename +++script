@@ -1,0 +1,21 @@
+
+ui_print("update image BTFM.bin...");
+package_extract_file("system/radio/BTFM.bin", "/dev/block/bootdevice/by-name/bluetooth");
+ui_print("update image NON-HLOS.bin...");
+package_extract_file("system/radio/NON-HLOS.bin", "/dev/block/bootdevice/by-name/modem");
+ui_print("update image emmc_appsboot.mbn...");
+package_extract_file("system/radio/emmc_appsboot.mbn", "/dev/block/bootdevice/by-name/aboot");
+ui_print("update image splash.img...");
+package_extract_file("system/radio/splash.img", "/dev/block/bootdevice/by-name/splash");
+ui_print("update image hyp.mbn...");
+package_extract_file("system/radio/hyp.mbn", "/dev/block/bootdevice/by-name/hyp");
+ui_print("update image rpm.mbn...");
+package_extract_file("system/radio/rpm.mbn", "/dev/block/bootdevice/by-name/rpm");
+ui_print("update image sbl1.mbn...");
+package_extract_file("system/radio/sbl1.mbn", "/dev/block/bootdevice/by-name/sbl1");
+ui_print("update image sdi.mbn...");
+package_extract_file("system/radio/sdi.mbn", "/dev/block/bootdevice/by-name/sdi");
+ui_print("update image pmic.mbn...");
+package_extract_file("system/radio/pmic.mbn", "/dev/block/bootdevice/by-name/pmic");
+ui_print("update image tz.mbn...");
+package_extract_file("system/radio/tz.mbn", "/dev/block/bootdevice/by-name/tz");

@@ -56,7 +56,7 @@ vendor_modify_images := boot
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth NfcNci KeyChain Tag HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService WAPPushManager Stk TimeService qcrilmsgtunnel CMSettingsProvider
+                     ProxyHandler Shell DefaultContainerService WAPPushManager Stk TimeService CMSettingsProvider
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -89,14 +89,14 @@ vendor_modify_jars := android.policy framework services telephony-common wifi-se
 # You can configure the board system file path which relative to the system directory in the board release.
 # You should add "lib64/libwebviewchromium.so" for 64 bit system.
 #-----------------------------------------------------------------------------
-board_saved_files := lib/libwebviewchromium.so bin/bootanimation bin/shutdownanimation media/bootanimation.zip media/shutanimation.zip
+board_saved_files := lib/libwebviewchromium.so lib64/libwebviewchromium.so bin/bootanimation bin/shutdownanimation media/bootanimation.zip media/shutanimation.zip
 
 ##############################################################################
 # The value decides which board system apk you want to remove.
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := Browser MzInput Video AppCenter MzUpdate Reader Map
+board_remove_apps := LogReport
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -177,9 +177,9 @@ USE_ASSERTIONS_IN_UPDATER_SCRIPT := false
 ##############################################################################
 # Defines whether generates a block-based OTA, system.img.dat in DAT format will be produced.
 # Will fall back to a file-based OTA if the target_files is older and doesn't support block-based OTAs.
-# Default: false
+# Default: true
 #-----------------------------------------------------------------------------
-#PRODUCE_BLOCK_BASED_OTA := true
+PRODUCE_BLOCK_BASED_OTA := false
 
 
 include $(PORT_BUILD)/main.mk
